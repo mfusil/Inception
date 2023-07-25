@@ -1,0 +1,46 @@
+version: '3.5'
+
+services:
+  nginx:
+    container_name:
+    build: requirements/nginx/
+    depend_on:
+      - mariadb
+      - wordpress
+    volumes:
+    ports:
+    networks:
+    restart : always
+
+  wordpress:
+    container_name:
+    build:  
+      context:
+      args:
+      env_file:
+        - .env
+      depend_on:
+        - mariadb
+      volumes:
+      networks:
+      restart: always
+
+  mariadb:
+    container_name:
+    build: requirements/mariadb/
+
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+    restart: always
+
+volumes:
+  v_wp:
+    name:
+    driver:
+    driver_opts:
+      type:
+      o:
+      device:
+
+networks:

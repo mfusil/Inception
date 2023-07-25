@@ -1,0 +1,8 @@
+lancer la creation de conteneurs : docker-compose up
+lancer un seul conteneur : docker run
+
+-d pour faire tourner les conteneurs en tache de fond
+
+savoir si les conteneurs sont fonctionnels : docker-compose ps
+arreter un conteneur : docker-compose stop
+valider la syntaxe du fichier docker-compose.yml : docker-compose config
